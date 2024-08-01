@@ -20,3 +20,5 @@ my chnages in git hooks
 triggering jobs from poll scm
 modify data
 my chnages in git hooks
+
+webhook gtrigger for pipeline job view
