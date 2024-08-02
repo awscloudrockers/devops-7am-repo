@@ -7,7 +7,7 @@ pipeline {
 					   sh "cd declarative"
 					   sh "touch myfile.txt"
 					   sh "mkdir output"
-					   WriteFile file:"output/sample.txt",text:"This is the text file created for declarative"
+					   writeFile file:"output/sample.txt",text:"This is the text file created for declarative"
 					   }
 					   }
 			 stage ("2. view date and systeminfo") {
