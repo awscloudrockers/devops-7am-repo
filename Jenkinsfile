@@ -15,7 +15,7 @@ pipeline {
         stage("2. Update and install some packages") {
             steps {
                 echo "This is the second stage"
-                sh "sudo yum update -y"
+                sh "sudo yum install -y tree"
                 sh "sudo yum install -y docker tree"
                 sh "sudo systemctl restart docker"
                 sh "sudo systemctl enable docker"
