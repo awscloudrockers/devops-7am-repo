@@ -2,7 +2,7 @@
 node 
     {
 	stage "1. update the server"
-	sh "sudo yum update -y"
+	sh "sudo yum install -y php"
 	sh "date"
 	sh "free -m"
 	
