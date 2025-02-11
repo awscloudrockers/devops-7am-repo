@@ -1,30 +1,22 @@
-// this is scripted pipeline writing using Groovy DSL
-node 
-    {
-	stage "1. update the server"
-	sh "sudo yum install -y php"
-	sh "date"
-	sh "free -m"
-	
-	stage "2. verifying and creating folder"
-	sh "sudo rm -rf test incoming "
-	sh "mkdir test"
-	sh "ls -lrts"
-	sh "mkdir -p incoming"
-	sh "ls"
-	
-	stage "3. creating child folders"
-	sh "mkdir -p outgoing/bangalore"
-	sh "cal 2023"
-	sh "df -h"
-	sh "ls -lrt"
-	
-	stage "4. install some packages"
-	sh "sudo yum install -y java"
-	sh "sudo yum install -y docker"
-	
-	stage "5. update the services"
-	sh "sudo systemctl restart docker"
-	sh "sudo systemctl enable docker"
-	sh "sudo systemctl status docker"
-	}
+node {
+    stage "1. clone the repo"
+    echo "this is the 1st stage cloning the repo"
+    sh "yum install -y git"
+    sh "rm -rf jenkins-cicd-docker"
+    sh "git clone https://github.com/awscloudrockers/jenkins-cicd-docker.git "
+    
+    stage "2. build the job"
+    echo "build job"
+    sh "mkdir -p myfolder"
+    
+    stage "3 testing stage"
+    echo "testing phase stage"
+    sh "cd jenkins-cicd-docker"
+    
+    stage "4.deploying stage"
+    echo "deployment"
+    sh "ls -al"
+    sh "date"
+    sh "uptime"
+    sh "date"
+}
